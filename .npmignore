@@ -6,3 +6,4 @@ coverage/
 .npmrc
 .gitignore
 .npmignore
+.github/
