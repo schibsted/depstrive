@@ -1,0 +1,8 @@
+# NodeJS
+coverage/
+
+# CI/CD
+.releaserc
+.npmrc
+.gitignore
+.npmignore
