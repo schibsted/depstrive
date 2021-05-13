@@ -1,5 +1,12 @@
 # Depstrive Changelog
 
+## [1.0.2](https://github.com/schibsted/depstrive/compare/v1.0.1...v1.0.2) (2021-05-13)
+
+
+### Bug Fixes
+
+* handling subcommand error rejection ([354c113](https://github.com/schibsted/depstrive/commit/354c1134ab53bc21a6be501277b45d548aa20a86))
+
 ## [1.0.1](https://github.com/schibsted/depstrive/compare/v1.0.0...v1.0.1) (2021-02-18)
 
 
