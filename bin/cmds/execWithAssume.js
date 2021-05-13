@@ -16,5 +16,12 @@ exports.handler = (argv) => {
   const cmd = argv.cmd.join(' ');
 
   logger.info('Running command with assumed role');
-  execWithRole(argv.roleArn, cmd);
+  execWithRole(argv.roleArn, cmd)
+    .then(() => {
+      logger.info('done');
+    })
+    .catch((reason) => {
+      logger.error(reason);
+      process.exit(1);
+    });
 };
