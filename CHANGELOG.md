@@ -1,5 +1,12 @@
 # Depstrive Changelog
 
+## [1.0.3](https://github.com/schibsted/depstrive/compare/v1.0.2...v1.0.3) (2021-06-01)
+
+
+### Bug Fixes
+
+* fixed logging level for init message ([d96e557](https://github.com/schibsted/depstrive/commit/d96e55754595d2ad3078da9148c3de518a59f47f))
+
 ## [1.0.2](https://github.com/schibsted/depstrive/compare/v1.0.1...v1.0.2) (2021-05-13)
 
 
