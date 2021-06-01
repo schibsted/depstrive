@@ -11,8 +11,8 @@ const main = () => {
   const { argv } = yargs
     .scriptName(packageJson.name)
     .middleware((opts) => {
-      logger.info(`** Running ${packageJson.name} version ${packageJson.version} ...`);
       setLogLevel(opts.logLevel);
+      logger.info(`** Running ${packageJson.name} version ${packageJson.version} ...`);
     })
     .commandDir('cmds', { recurse: true })
     .options({
