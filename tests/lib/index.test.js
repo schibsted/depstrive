@@ -1,5 +1,5 @@
 const getLogger = require('../../lib/logger');
-const depstrive = require('../../lib/index.js');
+const depstrive = require('../../lib/index');
 
 describe('Module', () => {
   beforeAll(() => {
