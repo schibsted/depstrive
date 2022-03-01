@@ -30,4 +30,3 @@ Options:
   --role-arn, -r   AWS Assume Role arn                                [required]
   -h, --help       Show help                                           [boolean]
 ```
-
