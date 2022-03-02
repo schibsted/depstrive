@@ -1,7 +1,44 @@
 const awsAssumeRole = require('../../../lib/aws/assumeRole');
 
 // Mocked in __mocks__
-jest.mock('aws-sdk');
+jest.mock('@aws-sdk/client-sts', () => ({
+  STSClient: jest.fn().mockImplementation(() => ({
+    send: jest.fn().mockImplementation((params) => {
+      switch (params.type) {
+        case 'AssumeRoleCommand':
+          return Promise.resolve({
+            AssumedRoleUser: {
+              Arn: params.RoleArn,
+            },
+            Credentials: {
+              AccessKeyId: 'akid-1',
+              SecretAccessKey: 'sak-2',
+              SessionToken: 'st-3',
+              Expiration: 'today',
+            },
+          });
+        case 'GetCallerIdentityCommand':
+          return Promise.resolve({
+            ResponseMetadata: { RequestId: 'REQUID' },
+            UserId: 'AWS_UID',
+            Account: '123456789012',
+            Arn: 'arn:aws:sts::123456789012:assumed-role/some-user',
+          });
+        default:
+          return Promise.reject(new Error('Unimplemented'));
+      }
+    }),
+  })),
+  AssumeRoleCommand: jest.fn().mockImplementation((params) => ({
+    type: 'AssumeRoleCommand',
+    params,
+  })),
+  GetCallerIdentityCommand: jest.fn().mockImplementation((params) => ({
+    type: 'GetCallerIdentityCommand',
+    params,
+  })),
+}));
+
 jest.mock('child_process', () => ({
   execSync: jest.fn().mockImplementation((command, params) => ({
     command,
@@ -38,12 +75,24 @@ describe('Module', () => {
   });
 
   it('execs command with assumed role', async () => {
-    const mockExecParams = await awsAssumeRole.execWithRole('arn:::exec-with-role', 'echo Hello World');
+    const mockExecParams = await awsAssumeRole.execWithRole(
+      'arn:::exec-with-role',
+      'echo Hello World',
+    );
     expect(mockExecParams).toHaveProperty('command', 'echo Hello World');
     expect(mockExecParams).toHaveProperty('params');
     expect(mockExecParams.params).toHaveProperty('env');
-    expect(mockExecParams.params.env).toHaveProperty('AWS_ACCESS_KEY_ID', 'akid-1');
-    expect(mockExecParams.params.env).toHaveProperty('AWS_SECRET_ACCESS_KEY', 'sak-2');
-    expect(mockExecParams.params.env).toHaveProperty('AWS_SESSION_TOKEN', 'st-3');
+    expect(mockExecParams.params.env).toHaveProperty(
+      'AWS_ACCESS_KEY_ID',
+      'akid-1',
+    );
+    expect(mockExecParams.params.env).toHaveProperty(
+      'AWS_SECRET_ACCESS_KEY',
+      'sak-2',
+    );
+    expect(mockExecParams.params.env).toHaveProperty(
+      'AWS_SESSION_TOKEN',
+      'st-3',
+    );
   });
 });
