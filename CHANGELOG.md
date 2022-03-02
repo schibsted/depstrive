@@ -1,5 +1,17 @@
 # Depstrive Changelog
 
+# [1.1.0-beta.1](https://github.com/schibsted/depstrive/compare/v1.0.4-beta.1...v1.1.0-beta.1) (2022-03-02)
+
+
+### Bug Fixes
+
+* tests and missing new for STSClient ([2c58ef2](https://github.com/schibsted/depstrive/commit/2c58ef2d7f8a1f516d17ac6ae90451b0599e95dd))
+
+
+### Features
+
+* upgraded aws-sdk to v3 ([932f6db](https://github.com/schibsted/depstrive/commit/932f6db3e40c0747e50b364c1fb4eecb122ab16a))
+
 ## [1.0.4-beta.1](https://github.com/schibsted/depstrive/compare/v1.0.3...v1.0.4-beta.1) (2022-03-02)
 
 
