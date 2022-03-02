@@ -1,5 +1,12 @@
 # Depstrive Changelog
 
+## [1.0.4-beta.1](https://github.com/schibsted/depstrive/compare/v1.0.3...v1.0.4-beta.1) (2022-03-02)
+
+
+### Bug Fixes
+
+* upgraded dependencies ([c23c61c](https://github.com/schibsted/depstrive/commit/c23c61c765860b824943176b519a0c46713e6c86))
+
 ## [1.0.3](https://github.com/schibsted/depstrive/compare/v1.0.2...v1.0.3) (2021-06-01)
 
 

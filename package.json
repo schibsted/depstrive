@@ -1,6 +1,6 @@
 {
   "name": "depstrive",
-  "version": "1.0.3",
+  "version": "1.0.4-beta.1",
   "description": "CI/CD Multi-tool",
   "main": "lib/index.js",
   "files": [
