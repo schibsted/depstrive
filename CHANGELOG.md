@@ -1,5 +1,37 @@
 # Depstrive Changelog
 
+# [2.0.0-beta.1](https://github.com/schibsted/depstrive/compare/v1.1.0-beta.1...v2.0.0-beta.1) (2022-03-02)
+
+
+### Bug Fixes
+
+* doc and breaking change note ([5039b0f](https://github.com/schibsted/depstrive/commit/5039b0feae3e5e0733884669503ccd341bab8a70))
+
+
+### BREAKING CHANGES
+
+* double dash is not supported anymore. Pass your
+subcommand in double quote
+
+# [1.1.0-beta.1](https://github.com/schibsted/depstrive/compare/v1.0.4-beta.1...v1.1.0-beta.1) (2022-03-02)
+
+
+### Bug Fixes
+
+* tests and missing new for STSClient ([2c58ef2](https://github.com/schibsted/depstrive/commit/2c58ef2d7f8a1f516d17ac6ae90451b0599e95dd))
+
+
+### Features
+
+* upgraded aws-sdk to v3 ([932f6db](https://github.com/schibsted/depstrive/commit/932f6db3e40c0747e50b364c1fb4eecb122ab16a))
+
+## [1.0.4-beta.1](https://github.com/schibsted/depstrive/compare/v1.0.3...v1.0.4-beta.1) (2022-03-02)
+
+
+### Bug Fixes
+
+* upgraded dependencies ([c23c61c](https://github.com/schibsted/depstrive/commit/c23c61c765860b824943176b519a0c46713e6c86))
+
 ## [1.0.3](https://github.com/schibsted/depstrive/compare/v1.0.2...v1.0.3) (2021-06-01)
 
 
